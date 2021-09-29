@@ -14,4 +14,10 @@ class HttpClinetTest {
         HttpClinet clinet = new HttpClinet("httpbin.org", 80, "/html");
         assertEquals(200,clinet.getstatusCode());
     }
+    @Test
+    void shouldRetern404StatusCode(){
+        HttpClinet clinet = new HttpClinet("httpbin.org", 80, "/this bag its doesnot exsist");
+        assertEquals(404,clinet.getstatusCode());
+    }
+
 }

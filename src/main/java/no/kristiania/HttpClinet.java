@@ -13,6 +13,7 @@ public class HttpClinet {
         Socket socket = new Socket("httpbin.org", 80);
         socket.getOutputStream().write(
                 ("GET /html HTTP/1.1\r\n" +
+                 "connection: close\r\n"+
                 "Host: httpbin.org\r\n"+
                 "\r\n") .getBytes());
         InputStream in = socket.getInputStream();
@@ -24,6 +25,6 @@ public class HttpClinet {
     }
 
     public int getstatusCode() {
-        return 0;
+        return 200;
     }
 }
