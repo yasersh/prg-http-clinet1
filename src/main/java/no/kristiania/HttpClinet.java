@@ -5,6 +5,10 @@ import java.io.InputStream;
 import java.net.Socket;
 
 public class HttpClinet {
+    public HttpClinet(String host, int port, String reqwestTarget) {
+
+    }
+
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket("httpbin.org", 80);
         socket.getOutputStream().write(
@@ -17,5 +21,9 @@ public class HttpClinet {
             System.out.print((char) c);
 
         }
+    }
+
+    public int getstatusCode() {
+        return 0;
     }
 }
